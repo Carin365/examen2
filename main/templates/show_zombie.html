@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>{{ zombie.name }} - Blog</title>
+</head>
+<body>
+	<a href="{% url home %}" >return</a>
+	<h1>{{ zombie.name}} -> ({{ zombie.tweets.count }}) </h1>
+	<p1>Cemetery: {{ zombie.cemetery}}</p1>
+	<p>
+	{% for tweet in zombie.tweets.all %}
+			<div>
+				Tweet: {{ tweet.status }}
+			</div>
+			{% endfor %}
+	</p>
+</body>
+</html>

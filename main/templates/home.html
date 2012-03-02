@@ -1,0 +1,25 @@
+<html>
+<head>
+	<title>Blog</title>
+</head>
+<body>
+	<div>
+		Examen 2
+	</div>
+	<hr/>
+	{% for zombie in zombies %}
+	<div>
+		<h3>{{ zombie.name}} - ({{ zombie.tweets.count }})-tweets
+		<a href="{% url show_zombie zombie.id %}">show more</a>
+		</h3>
+		<div>Cemetery:    {{ zombie.cemetery }}</div>
+		<div class="Tweet">
+			{% for tweet in zombie.tweets.all %}
+			<div>Tweets:   {{ tweet.status }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endfor %}
+</body>
+</html>
